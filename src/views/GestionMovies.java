@@ -221,6 +221,11 @@ public class GestionMovies extends javax.swing.JFrame {
         jLabel4.setText("CATEGORIAS");
 
         cbxCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxCategoria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxCategoriaActionPerformed(evt);
+            }
+        });
 
         jButton1.setBackground(new java.awt.Color(255, 51, 51));
         jButton1.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
@@ -351,6 +356,10 @@ public class GestionMovies extends javax.swing.JFrame {
         adminMenu.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void cbxCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxCategoriaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxCategoriaActionPerformed
 
     /**
      * @param args the command line arguments

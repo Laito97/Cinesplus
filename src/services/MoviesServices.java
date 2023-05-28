@@ -41,6 +41,23 @@ public class MoviesServices {
 
     }
     
+     public ArrayList searchMovie() throws SQLException {
+        ArrayList<String> movieData = new ArrayList<String>(); 
+        Statement conect = con.createStatement();
+        ResultSet result = conect.executeQuery("Select * From movies");
+        while (result.next()) {
+        String id = result.getString("movie_id");
+        String name = result.getString("name");
+        String item = id + "-" + name;
+
+            movieData.add(item);
+        };
+        conect.close();
+        result.close();
+        con.close();
+        return movieData;
+    }
+    
     public void RegisterMovies(String titulo, String descripcion, int categoria) throws SQLException {
         CallableStatement conect = con.prepareCall("{call movies_register(?,?,?)}");
         conect.setString(1, titulo);
